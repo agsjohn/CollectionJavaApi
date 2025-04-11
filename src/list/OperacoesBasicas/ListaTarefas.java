@@ -1,0 +1,47 @@
+package list.OperacoesBasicas;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListaTarefas {
+    private List<Tarefa> listaTarefas;
+
+
+    public ListaTarefas() {
+        this.listaTarefas = new ArrayList<Tarefa>();
+    }
+
+    public ListaTarefas(List<Tarefa> listaTarefas) {
+        this.listaTarefas = listaTarefas;
+    }
+
+    public void adicionarTarefa(String descricao){
+        listaTarefas.add(new Tarefa(descricao));
+    }
+
+    public void removerTarefa(String descricao){
+        List<Tarefa> tarefasParaRemover = new ArrayList<>();
+        for(Tarefa tarefa : listaTarefas){
+            if(tarefa.getDescricao().equalsIgnoreCase(descricao)){
+                tarefasParaRemover.add(tarefa);
+            }
+        }
+        listaTarefas.removeAll(tarefasParaRemover);
+    }
+
+    public int obterNumeroTotalTarefas(){
+        return listaTarefas.size();
+    }
+
+    public void obterDescricoesTarefas(){
+        System.out.println(listaTarefas);
+    }
+
+    public static void main(String[] args) {
+        ListaTarefas listaTarefa = new ListaTarefas();
+
+        listaTarefa.adicionarTarefa("Tarefa 1");
+        listaTarefa.adicionarTarefa("Tarefa 2");
+        System.out.println(listaTarefa.obterNumeroTotalTarefas());
+    }
+}
