@@ -36,12 +36,4 @@ public class ListaTarefas {
     public void obterDescricoesTarefas(){
         System.out.println(listaTarefas);
     }
-
-    public static void main(String[] args) {
-        ListaTarefas listaTarefa = new ListaTarefas();
-
-        listaTarefa.adicionarTarefa("Tarefa 1");
-        listaTarefa.adicionarTarefa("Tarefa 2");
-        System.out.println(listaTarefa.obterNumeroTotalTarefas());
-    }
 }
